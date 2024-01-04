@@ -1,14 +1,13 @@
 #include "raylib.h"
+#include "buttons.h"
 
 
-#define SCREEN_WIDTH 1000
-#define SCREEN_HEIGHT 600
+#define SCREEN_WIDTH 1280
+#define SCREEN_HEIGHT 720
 #define BOX_WIDTH 50
 #define BOX_SPACING 30
 #define SORT_SPEED 60
 
-//flags
-int done = 0  , begin = 0 , setting_change = 0 , sort = 0 ; 
 
 bool pause = false;  
 
@@ -25,6 +24,9 @@ int main(void)
     
     int sortedSteps = 0;
     int currentStep = 0;
+
+    //flags
+    int done = 0  , begin = 0 , setting_change = 0 , sort = 0 , quit = 0 ; 
     
     while (!WindowShouldClose()) {
         // Update
@@ -44,13 +46,13 @@ int main(void)
                 if( done == 1)
                 {
 
-                    if( quitButton() == 1 )
+                    if( quitButton( "Exit",(SCREEN_WIDTH/2) - (MeasureText("Exit",40)/2),SCREEN_HEIGHT/2,&begin) == 1 )
                     {   
 
                         //quit
 
                     }
-                else if ( playAginButton() == 1 ){
+                else if ( playAginButton( "Play again" ,(SCREEN_WIDTH/2) - (MeasureText("Play again",40)/2) , SCREEN_HEIGHT / 2 - 100 ,&begin) == 1 ){
 
                         //init the flags to begin the sort
                     
@@ -67,7 +69,7 @@ int main(void)
                     //open setting page 
 
                 }
-                else if( quitButton() == 1 )
+                else if( quit == 1 )
                 {
 
                     //quit  
@@ -80,7 +82,9 @@ int main(void)
                     // draw the title of the main menu
 
                     // buttons logic 
-
+                    sort           =  startButton("Start",(SCREEN_WIDTH/2) - (MeasureText("Start",40)/2),500,&begin);
+                    setting_change =  settingButton("Setting",(SCREEN_WIDTH/2) - (MeasureText("Setting",40)/2),550,&begin);
+                    quit           =  quitButton("Exit",(SCREEN_WIDTH/2) - (MeasureText("Exit",40)/2),600,&begin);
                 }
             }
         EndDrawing();

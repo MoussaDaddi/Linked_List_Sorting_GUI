@@ -249,8 +249,7 @@ endif
 
 # Define include paths for required headers
 # NOTE: Several external required libraries (stb and others)
-INCLUDE_PATHS = -I. -I$(RAYLIB_PATH)/src -I$(RAYLIB_PATH)/src/external
-
+INCLUDE_PATHS = -I. -I/c/raylib/raylib/src -I/c/raylib/w64devkit/x86_64-w64-mingw32/include
 # Define additional directories containing required header files
 ifeq ($(PLATFORM),PLATFORM_RPI)
     # RPI required libraries
