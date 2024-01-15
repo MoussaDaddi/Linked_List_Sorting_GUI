@@ -10,7 +10,12 @@
 			"math.h": "c",
 			"blocks.h": "c",
 			"stdio.h": "c",
-			"*.m": "c"
+			"*.m": "c",
+			"node.h": "c",
+			"cstdio": "c",
+			"array": "c",
+			"string_view": "c",
+			"initializer_list": "c"
 		}
 	}
 }

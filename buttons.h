@@ -34,7 +34,7 @@ int startButton( const char *text ,int x ,int y ,int *begin){
 }
 
 
-int settingButton( const char *text ,int x ,int y ,int *begin){
+int settingButton( const char *text ,int x ,int y ){
     // SET RECTANGLE
     struct Rectangle r1 = {.x = (float)(x - 10), .y = (float)(y - 5), .width = (float)(MeasureText(text, 40) + 20), .height = 50};
     // Hover detection
@@ -46,14 +46,6 @@ int settingButton( const char *text ,int x ,int y ,int *begin){
         //pressing
         if (IsMouseButtonPressed(0))
         {
-            if (*begin == 0)
-            {
-                *begin = 1;
-            }
-            else if(*begin == 1)
-            {
-                *begin = 0;
-            }
             return 1;
         }
     }
@@ -67,7 +59,7 @@ int settingButton( const char *text ,int x ,int y ,int *begin){
 }
 
 
-int quitButton( const char *text ,int x ,int y ,int *begin){
+int quitButton( const char *text ,int x ,int y ){
     // SET RECTANGLE
     struct Rectangle r1 = {.x = (float)(x - 10), .y = (float)(y - 5), .width = (float)(MeasureText(text, 40) + 20), .height = 50};
     // Hover detection
@@ -79,14 +71,6 @@ int quitButton( const char *text ,int x ,int y ,int *begin){
         //pressing
         if (IsMouseButtonPressed(0))
         {
-            if (*begin == 0)
-            {
-                *begin = 1;
-            }
-            else if(*begin == 1)
-            {
-                *begin = 0;
-            }
             return 1;
         }
     }
@@ -100,7 +84,7 @@ int quitButton( const char *text ,int x ,int y ,int *begin){
 }
 
 
-int playAginButton( const char *text ,int x ,int y ,int *begin){
+int playAginButton( const char *text ,int x ,int y){
     // SET RECTANGLE
     struct Rectangle r1 = {.x = (float)(x - 10), .y = (float)(y - 5), .width = (float)(MeasureText(text, 40) + 20), .height = 50};
     // Hover detection
@@ -112,14 +96,6 @@ int playAginButton( const char *text ,int x ,int y ,int *begin){
         //pressing
         if (IsMouseButtonPressed(0))
         {
-            if (*begin == 0)
-            {
-                *begin = 1;
-            }
-            else if(*begin == 1)
-            {
-                *begin = 0;
-            }
             return 1;
         }
     }
